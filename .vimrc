@@ -1,3 +1,5 @@
+" Set bash as default shell
+set shell=/bin/bash
 "--------------------------------------------------
 " NeoBundle Init
 
@@ -339,6 +341,7 @@ nmap <silent> <leader>tn :TernRename<CR>
 
 " if You have problem with background, uncomment this line
 " let g:solarized_termtrans=1
+let g:solarized_termcolors=256
 
 "-------------------------
 " neosnippets
@@ -455,10 +458,10 @@ call arpeggio#map('i', '', 0, 'jk', '<ESC>')
 colorscheme solarized
 
 " Setting up light color scheme
-set background=light
+set background=dark
 
 " set highlighting for colorcolumn
-highlight ColorColumn ctermbg=lightGrey
+highlight ColorColumn ctermbg=darkGray
 
 "--------------------------------------------------
 " General options
@@ -566,8 +569,9 @@ set nostartofline
 " Disable wrapping long string
 set nowrap
 
-" Display Line numbers
+" Display Line numbers and relative line numbers
 set number
+set rnu
 
 " Highlight line with cursor
 set cursorline
