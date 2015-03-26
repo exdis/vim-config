@@ -272,7 +272,7 @@ let NERDTreeMinimalUI=1
 
 " Display current file in the NERDTree ont the left
 nmap <silent> <leader>f :NERDTreeFind<CR>
-map <C-n> :NERDTreeToggle<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 "-------------------------
 " Syntastic
