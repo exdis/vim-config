@@ -190,6 +190,9 @@ NeoBundle 'Shougo/neomru.vim'
 " Plugin for chord mappings
 NeoBundle 'kana/vim-arpeggio'
 
+" EasyMotion
+NeoBundle 'Lokaltog/vim-easymotion'
+
 " JShint :)
 " But not necessary with syntastics
 " NeoBundle 'walm/jshint.vim'
@@ -715,6 +718,10 @@ vmap <leader>s :s//<left>
 
 " Moving between splits
 nmap <leader>w <C-w>w
+
+"--------------------------------------------------
+" Easy Motion
+nmap s <Plug>(easymotion-s)
 
 "--------------------------------------------------
 " Aautocmd
