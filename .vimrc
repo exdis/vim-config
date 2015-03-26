@@ -76,6 +76,7 @@ NeoBundle 'vim-scripts/DirDiff.vim'
 
 " Colorscheme solarazied for vim
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'wellsjo/wells-colorscheme.vim'
 
 " Allow autoclose paired characters like [,] or (,),
 " and add smart cursor positioning inside it,
@@ -455,11 +456,11 @@ call arpeggio#map('i', '', 0, 'jk', '<ESC>')
 "--------------------------------------------------
 " Colorscheme
 
-" Use solarized colorscheme
-colorscheme solarized
-
 " Setting up light color scheme
 set background=dark
+
+" Use wells-colors colorscheme
+colorscheme wells-colors
 
 " set highlighting for colorcolumn
 highlight ColorColumn ctermbg=darkGray
