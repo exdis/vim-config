@@ -77,6 +77,7 @@ NeoBundle 'vim-scripts/DirDiff.vim'
 " Colorscheme solarazied for vim
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'wellsjo/wells-colorscheme.vim'
+NeoBundle 'morhetz/gruvbox'
 
 " Allow autoclose paired characters like [,] or (,),
 " and add smart cursor positioning inside it,
@@ -463,7 +464,7 @@ call arpeggio#map('i', '', 0, 'jk', '<ESC>')
 set background=dark
 
 " Use wells-colors colorscheme
-colorscheme wells-colors
+colorscheme gruvbox
 
 " set highlighting for colorcolumn
 highlight ColorColumn ctermbg=darkGray
@@ -561,11 +562,11 @@ set laststatus=2
 
 " Add a line / column display in the bottom right-hand section of the screen.
 " Not needed with airline plugin
-"set ruler
+" set ruler
 
 " Setting up right-hand section(ruller) format
 " Not needed with airline plugin
-"set rulerformat=%30(%=\:%y%m%r%w\ %l,%c%V\ %P%)
+" set rulerformat=%30(%=\:%y%m%r%w\ %l,%c%V\ %P%)
 
 " The cursor should stay where you leave it, instead of moving to the first non
 " blank of the line
