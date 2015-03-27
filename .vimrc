@@ -150,6 +150,9 @@ NeoBundle 'wavded/vim-stylus'
 " HTML5 + inline SVG omnicomplete funtion, indent and syntax for Vim.
 NeoBundle 'othree/html5.vim'
 
+" Jade syntax
+NeoBundle 'digitaltoad/vim-jade'
+
 " Syntax highlighting for .jsx (js files for react js)
 NeoBundle 'mxw/vim-jsx'
 
@@ -193,6 +196,12 @@ NeoBundle 'kana/vim-arpeggio'
 
 " EasyMotion
 NeoBundle 'Lokaltog/vim-easymotion'
+
+" L9 library
+NeoBundle 'vim-scripts/L9'
+
+" FuzzyFinder
+NeoBundle 'vim-scripts/FuzzyFinder'
 
 " JShint :)
 " But not necessary with syntastics
@@ -241,11 +250,11 @@ let g:unite_source_rec_max_cache_files = 99999
 
 " If ack exists use it instead of grep
 if executable('ack-grep')
-    " Use ack-grep
-    let g:unite_source_grep_command = 'ack-grep'
-    " Set up ack options
-    let g:unite_source_grep_default_opts = '--no-heading --no-color -a -H'
-    let g:unite_source_grep_recursive_opt = ''
+" Use ack-grep
+let g:unite_source_grep_command = 'ack-grep'
+" Set up ack options
+let g:unite_source_grep_default_opts = '--no-heading --no-color -a -H'
+let g:unite_source_grep_recursive_opt = ''
 endif
 
 " Hotkey for open window with most recent files
@@ -772,3 +781,23 @@ if has("autocmd")
     augroup END
 
 endif
+
+" Indent on open brace
+inoremap {<cr> {<cr>}<c-o>O<tab>
+inoremap [<cr> [<cr>]<c-o>O<tab>
+inoremap (<cr> (<cr>)<c-o>O<tab>
+
+" directories and extensions to ignore when listing files
+let s:slash = '[/\\]'
+let s:startname = '(^|'.s:slash.')'
+let s:endname = '($|'.s:slash.')'
+let s:extension = '\.bak|\.swp|\.swo'
+let s:dirname = 'vendors|bower_components|coverage|node_modules|dist|vms|\.bzr|\.git|\.hg|\.svn|.+\.egg-info'
+let g:fuf_file_exclude = '\v'.'('.s:startname.'('.s:dirname.')'.s:endname.')|(('.s:extension.')$)'
+let g:fuf_dir_exclude = '\v'.s:startname.'('.s:dirname.')'.s:endname
+
+" limit number of displayed matches
+" (makes response instant even on huge source trees)
+let g:fuf_enumeratingLimit = 10
+
+nnoremap ,f :FufFile **/<cr>
