@@ -467,7 +467,7 @@ set background=dark
 colorscheme gruvbox
 
 " set highlighting for colorcolumn
-highlight ColorColumn ctermbg=darkGray
+highlight ColorColumn ctermbg=8
 
 "--------------------------------------------------
 " General options
@@ -586,7 +586,7 @@ set cursorline
 " set textwidth=80
 
 " higlight column right after max textwidth
-set colorcolumn=+1
+set colorcolumn=80,120
 
 
 "--------------------------------------------------
@@ -762,7 +762,7 @@ if has("autocmd")
         autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
         " Disable vertical line at max string length in NERDTree
-        autocmd FileType * setlocal colorcolumn=+1
+        autocmd FileType * setlocal colorcolumn=80,120
         autocmd FileType nerdtree setlocal colorcolumn=""
 
         " Enable Folding, uses plugin vim-javascript-syntax
