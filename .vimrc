@@ -792,7 +792,7 @@ let s:slash = '[/\\]'
 let s:startname = '(^|'.s:slash.')'
 let s:endname = '($|'.s:slash.')'
 let s:extension = '\.bak|\.swp|\.swo'
-let s:dirname = 'vendors|bower_components|coverage|node_modules|dist|vms|\.bzr|\.git|\.hg|\.svn|.+\.egg-info'
+let s:dirname = 'vendors|bower_components|coverage|dist|vms|\.bzr|\.git|\.hg|\.svn|.+\.egg-info'
 let g:fuf_file_exclude = '\v'.'('.s:startname.'('.s:dirname.')'.s:endname.')|(('.s:extension.')$)'
 let g:fuf_dir_exclude = '\v'.s:startname.'('.s:dirname.')'.s:endname
 
@@ -800,4 +800,6 @@ let g:fuf_dir_exclude = '\v'.s:startname.'('.s:dirname.')'.s:endname
 " (makes response instant even on huge source trees)
 let g:fuf_enumeratingLimit = 10
 
-nnoremap ,f :FufFile **/<cr>
+nnoremap ,nf :FufFile node_modules/ngs/lib/Ngs/**/<cr>
+nnoremap ,sf :FufFile scripts/**/<cr>
+nnoremap ,af :FufFile **/<cr>
