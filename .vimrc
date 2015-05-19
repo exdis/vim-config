@@ -197,11 +197,8 @@ NeoBundle 'kana/vim-arpeggio'
 " EasyMotion
 NeoBundle 'Lokaltog/vim-easymotion'
 
-" L9 library
-NeoBundle 'vim-scripts/L9'
-
-" FuzzyFinder
-NeoBundle 'vim-scripts/FuzzyFinder'
+" Command-T
+NeoBundle 'wincent/command-t'
 
 " JShint :)
 " But not necessary with syntastics
@@ -793,17 +790,4 @@ inoremap {<cr> {<cr>}<c-o>O<tab>
 inoremap [<cr> [<cr>]<c-o>O<tab>
 inoremap (<cr> (<cr>)<c-o>O<tab>
 
-" directories and extensions to ignore when listing files
-let s:slash = '[/\\]'
-let s:startname = '(^|'.s:slash.')'
-let s:endname = '($|'.s:slash.')'
-let s:extension = '\.bak|\.swp|\.swo'
-let s:dirname = 'vendors|bower_components|coverage|node_modules|dist|vms|\.bzr|\.git|\.hg|\.svn|.+\.egg-info'
-let g:fuf_file_exclude = '\v'.'('.s:startname.'('.s:dirname.')'.s:endname.')|(('.s:extension.')$)'
-let g:fuf_dir_exclude = '\v'.s:startname.'('.s:dirname.')'.s:endname
-
-" limit number of displayed matches
-" (makes response instant even on huge source trees)
-let g:fuf_enumeratingLimit = 10
-
-nnoremap ,f :FufFile **/<cr>
+set wildignore+=*.o,*.obj,.git,node_modules
