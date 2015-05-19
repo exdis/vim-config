@@ -655,6 +655,12 @@ set showmatch
 " Make < and > match as well
 set matchpairs+=<:>
 
+" Alternative tab navigation
+nmap <S-h> :tabprevious<CR>
+nmap <S-l> :tabnext<CR>
+nmap <C-S-h> :tabmove -1<CR>
+nmap <C-S-l> :tabmove +1<CR>
+nmap <C-t> :tabnew<CR>
 
 "--------------------------------------------------
 " Wildmenu
