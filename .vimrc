@@ -197,8 +197,8 @@ NeoBundle 'kana/vim-arpeggio'
 " EasyMotion
 NeoBundle 'Lokaltog/vim-easymotion'
 
-" Command-T
-NeoBundle 'wincent/command-t'
+" Control P
+NeoBundle 'kien/ctrlp.vim'
 
 " JShint :)
 " But not necessary with syntastics
@@ -789,5 +789,8 @@ endif
 inoremap {<cr> {<cr>}<c-o>O<tab>
 inoremap [<cr> [<cr>]<c-o>O<tab>
 inoremap (<cr> (<cr>)<c-o>O<tab>
+
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
 
 set wildignore+=*.o,*.obj,.git,node_modules
