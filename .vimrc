@@ -196,6 +196,9 @@ NeoBundle 'Lokaltog/vim-easymotion'
 " Control P
 NeoBundle 'kien/ctrlp.vim'
 
+" CtrlP-Funky
+NeoBundle 'tacahiroy/ctrlp-funky'
+
 " JShint :)
 " But not necessary with syntastics
 " NeoBundle 'walm/jshint.vim'
@@ -742,3 +745,5 @@ let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 
 set wildignore+=*.o,*.obj,.git,node_modules
+
+nnoremap <Leader>r :CtrlPFunky<Cr>
