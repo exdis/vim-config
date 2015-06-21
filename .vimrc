@@ -243,9 +243,9 @@ let g:syntastic_filetype_map = { "json": "javascript", }
 " open quicfix window with all error found
 nmap <silent> <leader>ll :Errors<cr>
 " previous syntastic error
-nmap <silent> [ :lprev<cr>
+nmap <silent> { :lprev<cr>
 " next syntastic error
-nmap <silent> ] :lnext<cr>
+nmap <silent> } :lnext<cr>
 
 "-------------------------
 " Fugitive
