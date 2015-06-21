@@ -234,6 +234,9 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+
 " For correct works of next/previous error navigation
 let g:syntastic_always_populate_loc_list = 1
 
@@ -246,6 +249,8 @@ nmap <silent> <leader>ll :Errors<cr>
 nmap <silent> { :lprev<cr>
 " next syntastic error
 nmap <silent> } :lnext<cr>
+" first syntastic error
+nmap <silent> <leader>{ :lfirst<cr>
 
 "-------------------------
 " Fugitive
