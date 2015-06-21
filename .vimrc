@@ -60,10 +60,6 @@ NeoBundle 'vim-scripts/tlib'
 " Allow word for bookmark marks, and nice quickfix window with bookmark list
 " NeoBundle 'AndrewRadev/simple_bookmarks.vim'
 
-" plugin for fuzzy file search, most recent files list
-" and much more
-NeoBundle 'Shougo/unite.vim'
-
 " Snippets engine with good integration with neocomplcache
 NeoBundle 'Shougo/neosnippet'
 " Default snippets for neosnippet, i prefer vim-snippets
@@ -217,59 +213,6 @@ NeoBundleCheck
 
 "--------------------------------------------------
 " Bundles settings
-
-"-------------------------
-" Unite
-
-" Set unite window height
-let g:unite_winheight = 10
-
-" Start unite in insert mode by default
-let g:unite_enable_start_insert = 1
-
-" Display unite on the bottom (or bottom right) part of the screen
-let g:unite_split_rule = 'botright'
-
-" Set short limit for max most recent files count.
-" It less unrelative recent files this way
-let g:unite_source_file_mru_limit = 100
-
-" Enable history for yanks
-let g:unite_source_history_yank_enable = 1
-
-" Make samll limit for yank history,
-let g:unite_source_history_yank_limit = 40
-
-" Grep options Default for unite + supress error messages
-let g:unite_source_grep_default_opts = '-iRHns'
-
-let g:unite_source_rec_max_cache_files = 99999
-
-" If ack exists use it instead of grep
-if executable('ack-grep')
-" Use ack-grep
-let g:unite_source_grep_command = 'ack-grep'
-" Set up ack options
-let g:unite_source_grep_default_opts = '--no-heading --no-color -a -H'
-let g:unite_source_grep_recursive_opt = ''
-endif
-
-" Hotkey for open window with most recent files
-nnoremap <silent><leader>m :<C-u>Unite file_mru <CR>
-
-" Hotkey for open history window
-nnoremap <silent><leader>h :Unite -quick-match -max-multi-lines=2 -start-insert -auto-quit history/yank<CR>
-
-" Quick tab navigation
-nnoremap <silent><leader>' :Unite -quick-match -auto-quit tab<CR>
-
-" Fuzzy find files
-nnoremap <silent><leader>; :Unite file_rec/async:! -buffer-name=files -start-insert<CR>
-
-" Unite-grep
-nnoremap <silent><leader>/ :Unite grep:. -no-start-insert -no-quit -keep-focus -wrap<CR>
-
-
 
 "-------------------------
 " NERDTree
