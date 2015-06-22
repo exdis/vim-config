@@ -747,3 +747,12 @@ let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*.o,*.obj,.git,node_modules
 
 nnoremap <Leader>r :CtrlPFunky<Cr>
+
+" CtrlP-Funky custom filter
+function! ctrlp#funky#ft#javascript#filters()
+    let filters = [
+        \ { 'pattern': '[a-zA-Z]\+(\w*)\s{',
+        \   'formatter': ['\m\C^[\t ]*', '', ''] }
+    \ ]
+    return filters
+endfunction
