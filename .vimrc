@@ -751,7 +751,7 @@ nnoremap <Leader>r :CtrlPFunky<Cr>
 " CtrlP-Funky custom filter
 function! ctrlp#funky#ft#javascript#filters()
     let filters = [
-        \ { 'pattern': '\m\C^[\t ]*[a-zA-Z]\+(.*)\s{',
+        \ { 'pattern': '\m\C^[\t ]*[_a-zA-Z]\+(.*)\s{',
         \   'formatter': ['\m\C^[\t ]*', '', ''] }
     \ ]
     return filters
