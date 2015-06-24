@@ -756,3 +756,10 @@ function! ctrlp#funky#ft#javascript#filters()
     \ ]
     return filters
 endfunction
+
+nnoremap <silent> <F5> :vertical resize -5<CR>
+nnoremap <silent> <F6> :vertical resize +5<CR>
+nnoremap <silent> <F7> :resize -5<CR>
+nnoremap <silent> <F8> :resize +5<CR>
+
+set pastetoggle=<F4>
