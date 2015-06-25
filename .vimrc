@@ -763,3 +763,8 @@ nnoremap <silent> <F7> :resize -5<CR>
 nnoremap <silent> <F8> :resize +5<CR>
 
 set pastetoggle=<F4>
+
+set splitbelow
+set splitright
+
+cnoreabbrev qq tabclose
