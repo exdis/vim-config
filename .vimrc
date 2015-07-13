@@ -705,8 +705,7 @@ if has("autocmd")
         " Restore cursor position :help last-position-jump
         au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
           \| exe "normal g'\"" | endif
-
-        " Set filetypes aliases
+" Set filetypes aliases
         au FileType htmldjango set ft=html.htmldjango
         au FileType scss set ft=scss.css
         au FileType less set ft=less.css
@@ -744,7 +743,7 @@ inoremap (<cr> (<cr>)<c-o>O<tab>
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 
-set wildignore+=*.o,*.obj,.git,node_modules
+set wildignore+=*.o,*.obj,.git,node_modules,dist
 
 nnoremap <Leader>r :CtrlPFunky<Cr>
 
