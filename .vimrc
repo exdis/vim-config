@@ -199,6 +199,9 @@ NeoBundle 'kien/ctrlp.vim'
 " CtrlP-Funky
 NeoBundle 'tacahiroy/ctrlp-funky'
 
+" Scss Syntax
+NeoBundle 'cakebaker/scss-syntax.vim'
+
 " JShint :)
 " But not necessary with syntastics
 " NeoBundle 'walm/jshint.vim'
