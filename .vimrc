@@ -770,3 +770,5 @@ set splitbelow
 set splitright
 
 cnoreabbrev qq tabclose
+
+set clipboard=unnamedplus
