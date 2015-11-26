@@ -313,7 +313,7 @@ let g:solarized_termcolors=256
 let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 " Disables standart snippets. We use vim-snippets bundle instead
 let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
@@ -776,3 +776,16 @@ let g:jsdoc_input_description=1
 let g:jsdoc_access_descriptions=2
 let g:jsdoc_underscore_private=1
 nmap <silent> <leader>j <Plug>(jsdoc)
+
+" Snippets
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
