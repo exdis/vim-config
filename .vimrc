@@ -202,6 +202,9 @@ NeoBundle 'tacahiroy/ctrlp-funky'
 " Scss Syntax
 NeoBundle 'cakebaker/scss-syntax.vim'
 
+" JSDoc
+NeoBundle 'heavenshell/vim-jsdoc'
+
 " JShint :)
 " But not necessary with syntastics
 " NeoBundle 'walm/jshint.vim'
@@ -772,3 +775,11 @@ set splitright
 cnoreabbrev qq tabclose
 
 set clipboard=unnamedplus
+
+" JSDoc settings
+let g:jsdoc_enable_es6=1
+let g:jsdoc_allow_input_prompt=1
+let g:jsdoc_input_description=1
+let g:jsdoc_access_descriptions=2
+let g:jsdoc_underscore_private=1
+nmap <silent> <leader>j <Plug>(jsdoc)
