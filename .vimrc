@@ -198,6 +198,9 @@ NeoBundle 'cakebaker/scss-syntax.vim'
 " JSDoc
 NeoBundle 'heavenshell/vim-jsdoc'
 
+" Ack
+NeoBundle 'mileszs/ack.vim'
+
 " JShint :)
 " But not necessary with syntastics
 " NeoBundle 'walm/jshint.vim'
