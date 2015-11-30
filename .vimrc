@@ -84,15 +84,16 @@ NeoBundle 'Raimondi/delimitMate'
 " I just enable it, with default config,
 " many false positive but still usefull
 NeoBundle 'scrooloose/syntastic'
-" Install jshint and for syntastic
-" Path to jshint if it not installed globally, then use local installation
-if !executable("jshint")
-    "let g:syntastic_jshint_exec = '~/.vim/node_modules/.bin/jshint'
-    let g:syntastic_javascript_jshint_exec = '~/.vim/node_modules/.bin/jshint'
-    if isNpmInstalled && !executable(expand(g:syntastic_javascript_jshint_exec))
-        silent ! echo 'Installing jshint' && npm --prefix ~/.vim/ install jshint
+" Install eslint and for syntastic
+" Path to eslint if it not installed globally, then use local installation
+if !executable("eslint")
+    "let g:syntastic_eslint_exec = '~/.vim/node_modules/.bin/eslint'
+    let g:syntastic_javascript_eslint_exec = '~/.vim/node_modules/.bin/eslint'
+    if isNpmInstalled && !executable(expand(g:syntastic_javascript_eslint_exec))
+        silent ! echo 'Installing eslint' && npm --prefix ~/.vim/ install eslint
     endif
 endif
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Great file system explorer, it appears when you open dir in vim
 " Allow modification of dir, and may other things
@@ -201,10 +202,6 @@ NeoBundle 'heavenshell/vim-jsdoc'
 " Ack
 NeoBundle 'mileszs/ack.vim'
 
-" JShint :)
-" But not necessary with syntastics
-" NeoBundle 'walm/jshint.vim'
-
 call neobundle#end()
 
 " Enable Indent in plugins
@@ -245,7 +242,7 @@ let g:syntastic_warning_symbol = "⚠"
 " For correct works of next/previous error navigation
 let g:syntastic_always_populate_loc_list = 1
 
-" check json files with jshint
+" check json files with eslint
 let g:syntastic_filetype_map = { "json": "javascript", }
 
 " open quicfix window with all error found
@@ -752,7 +749,7 @@ nnoremap <Leader>r :CtrlPFunky<Cr>
 " CtrlP-Funky custom filter
 function! ctrlp#funky#ft#javascript#filters()
     let filters = [
-        \ { 'pattern': '\m\C^[\t ]*[_a-zA-Z]\+(.*)\s{',
+        \ { 'pattern': '\m\C^[\t ]*[_a-zA-Z]\+\s*(.*)\s{',
         \   'formatter': ['\m\C^[\t ]*', '', ''] }
     \ ]
     return filters
