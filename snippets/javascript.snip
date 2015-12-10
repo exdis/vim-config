@@ -52,5 +52,17 @@ options head
   import ${1:var} from '${0:TARGET}';
 
 snippet req
+options word
+  require(${0:TARGET});
+
+snippet sta
 options head
-  var ${1:var} = require('${0:TARGET}');
+  static ${1:props} = ${0:TARGET};
+
+snippet tpl
+options head
+  static template = require(asset('./templates/${0:TARGET}.jade'));
+
+snippet style
+options head
+  static styles = require(asset('./styles/${0:TARGET}.scss'));
