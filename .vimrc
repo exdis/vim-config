@@ -61,11 +61,7 @@ NeoBundle 'vim-scripts/tlib'
 " NeoBundle 'AndrewRadev/simple_bookmarks.vim'
 
 " Snippets engine with good integration with neocomplcache
-NeoBundle 'Shougo/neosnippet'
-" Default snippets for neosnippet, i prefer vim-snippets
-"NeoBundle 'Shougo/neosnippet-snippets'
-" Default snippets
-NeoBundle 'honza/vim-snippets'
+NeoBundle 'SirVer/ultisnips'
 
 " Dirr diff
 NeoBundle 'vim-scripts/DirDiff.vim'
@@ -202,6 +198,9 @@ NeoBundle 'heavenshell/vim-jsdoc'
 " Ack
 NeoBundle 'mileszs/ack.vim'
 
+" CleverTab
+NeoBundle 'neitanod/vim-clevertab'
+
 call neobundle#end()
 
 " Enable Indent in plugins
@@ -306,23 +305,6 @@ nmap <silent> <leader>tn :TernRename<CR>
 let g:solarized_termcolors=256
 
 "-------------------------
-" neosnippets
-"
-
-" Enable snipMate compatibility
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/snippets'
-
-" Disables standart snippets. We use vim-snippets bundle instead
-let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
-
-" Expand snippet and jimp to next snippet field on Enter key.
-imap <expr><CR> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<CR>"
-
-"-------------------------
 " vim-airline
 
 " Colorscheme for airline
@@ -369,26 +351,6 @@ let g:neocomplcache_enable_auto_select = 1
 
 " Disable auto popup
 let g:neocomplcache_disable_auto_complete = 1
-
-" Smart tab Behavior
-function! CleverTab()
-    " If autocomplete window visible then select next item in there
-    if pumvisible()
-        return "\<C-n>"
-    endif
-    " If it's begining of the string then return just tab pressed
-    let substr = strpart(getline('.'), 0, col('.') - 1)
-    let substr = matchstr(substr, '[^ \t]*$')
-    if strlen(substr) == 0
-        " nothing to match on empty string
-        return "\<Tab>"
-    else
-        " If not begining of the string, and autocomplete popup is not visible
-        " Open this popup
-        return "\<C-x>\<C-u>"
-    endif
-endfunction
-inoremap <expr><TAB> CleverTab()
 
 " Undo autocomplete
 inoremap <expr><C-e> neocomplcache#undo_completion()
@@ -778,14 +740,14 @@ let g:jsdoc_underscore_private=1
 nmap <silent> <leader>j <Plug>(jsdoc)
 
 " Snippets
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger="<nop>"
 
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" CleverTab
+inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
+                      \<c-r>=CleverTab#Complete('tab')<cr>
+                      \<c-r>=CleverTab#Complete('ultisnips')<cr>
+                      \<c-r>=CleverTab#Complete('keyword')<cr>
+                      \<c-r>=CleverTab#Complete('omni')<cr>
+                      \<c-r>=CleverTab#Complete('stop')<cr>
+inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
