@@ -201,9 +201,6 @@ NeoBundle 'mileszs/ack.vim'
 " CleverTab
 NeoBundle 'neitanod/vim-clevertab'
 
-" TagBar
-NeoBundle 'majutsushi/tagbar'
-
 call neobundle#end()
 
 " Enable Indent in plugins
@@ -714,7 +711,7 @@ nnoremap <Leader>r :CtrlPFunky<Cr>
 " CtrlP-Funky custom filter
 function! ctrlp#funky#ft#javascript#filters()
     let filters = [
-        \ { 'pattern': '\m\C^[\t ]*[_a-zA-Z]\+\s*(.*)\s{',
+        \ { 'pattern': '\m\C^[\t ]*\(if\|for\)\@![_a-zA-Z]\+\s*(.*)\s{',
         \   'formatter': ['\m\C^[\t ]*', '', ''] }
     \ ]
     return filters
@@ -754,6 +751,3 @@ inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
                       \<c-r>=CleverTab#Complete('omni')<cr>
                       \<c-r>=CleverTab#Complete('stop')<cr>
 inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
-
-" TagBar
-nmap <F8> :TagbarToggle<CR>
