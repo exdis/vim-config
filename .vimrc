@@ -201,6 +201,9 @@ NeoBundle 'mileszs/ack.vim'
 " CleverTab
 NeoBundle 'neitanod/vim-clevertab'
 
+" TagBar
+NeoBundle 'majutsushi/tagbar'
+
 call neobundle#end()
 
 " Enable Indent in plugins
@@ -751,3 +754,6 @@ inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
                       \<c-r>=CleverTab#Complete('omni')<cr>
                       \<c-r>=CleverTab#Complete('stop')<cr>
 inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
+
+" TagBar
+nmap <F8> :TagbarToggle<CR>
