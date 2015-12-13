@@ -11,3 +11,19 @@ if (${1:true}) {
 	$0
 }
 endsnippet
+
+snippet comp "Vue Component" b
+import {ComponentVue, asset} from 'Component/Vue';
+
+@ComponentVue
+class $1 {
+
+	static template = require(asset('./templates/${1/./\l$0/}.jade'));
+
+	static styles = require(asset('./styles/${1/./\l$0/}.scss'));
+
+	$0
+}
+
+export default $1;
+endsnippet
