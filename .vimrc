@@ -754,3 +754,11 @@ inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Ack
+ca ack Ack!
+ca Ack Ack!
+let g:ackhighlight=1
+if executable('ag')
+    let g:ackprg = 'ag -S --nogroup --nocolor --ignore vendors --ignore www --ignore tests'
+endif
