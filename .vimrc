@@ -199,7 +199,7 @@ NeoBundle 'heavenshell/vim-jsdoc'
 NeoBundle 'mileszs/ack.vim'
 
 " CleverTab
-NeoBundle 'neitanod/vim-clevertab'
+NeoBundle 'exdis/vim-clevertab', 'ultisnips-expand-or-jump-setting'
 
 call neobundle#end()
 
@@ -749,9 +749,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 " CleverTab
 inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
                       \<c-r>=CleverTab#Complete('tab')<cr>
+                      \<c-r>=CleverTab#Complete('ultisnips')<cr>
                       \<c-r>=CleverTab#Complete('keyword')<cr>
                       \<c-r>=CleverTab#Complete('omni')<cr>
-                      \<c-r>=CleverTab#Complete('ultisnips')<cr>
                       \<c-r>=CleverTab#Complete('stop')<cr>
 inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
 
