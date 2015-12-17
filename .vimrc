@@ -378,11 +378,12 @@ call arpeggio#map('i', '', 0, 'jk', '<ESC>')
 "--------------------------------------------------
 " Colorscheme
 
-" Setting up light color scheme
 set background=dark
 
 " Use wells-colors colorscheme
 colorscheme gruvbox
+let g:gruvbox_contrast_dark="soft"
+let g:gruvbox_termcolors=256
 
 " set highlighting for colorcolumn
 highlight ColorColumn ctermbg=8
@@ -704,7 +705,7 @@ inoremap (<cr> (<cr>)<c-o>O<tab>
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 
-set wildignore+=*.o,*.obj,.git,node_modules,dist
+set wildignore+=*.o,*.obj,.git,node_modules,dist,coverage
 
 nnoremap <Leader>r :CtrlPFunky<Cr>
 
@@ -742,13 +743,15 @@ nmap <silent> <leader>j <Plug>(jsdoc)
 " Snippets
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<nop>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " CleverTab
 inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
                       \<c-r>=CleverTab#Complete('tab')<cr>
-                      \<c-r>=CleverTab#Complete('ultisnips')<cr>
                       \<c-r>=CleverTab#Complete('keyword')<cr>
                       \<c-r>=CleverTab#Complete('omni')<cr>
+                      \<c-r>=CleverTab#Complete('ultisnips')<cr>
                       \<c-r>=CleverTab#Complete('stop')<cr>
 inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
 
