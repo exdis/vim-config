@@ -568,8 +568,8 @@ set matchpairs+=<:>
 " Alternative tab navigation
 nmap <S-h> :tabprevious<CR>
 nmap <S-l> :tabnext<CR>
-nmap <C-S-h> :tabmove -1<CR>
-nmap <C-S-l> :tabmove +1<CR>
+nmap <S-j> :tabmove -1<CR>
+nmap <S-k> :tabmove +1<CR>
 nmap <C-t> :tabnew<CR>
 
 "--------------------------------------------------
@@ -592,7 +592,7 @@ set foldlevelstart=99
 set nofoldenable
 
 " Keymap to toggle folds with space
-nmap <space> za
+" nmap <space> za
 
 "--------------------------------------------------
 " Edit
@@ -722,6 +722,11 @@ nnoremap <silent> <F5> :vertical resize -5<CR>
 nnoremap <silent> <F6> :vertical resize +5<CR>
 nnoremap <silent> <F7> :resize -5<CR>
 nnoremap <silent> <F8> :resize +5<CR>
+
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 set pastetoggle=<F4>
 
