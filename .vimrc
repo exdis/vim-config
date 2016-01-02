@@ -201,6 +201,10 @@ NeoBundle 'mileszs/ack.vim'
 " CleverTab
 NeoBundle 'exdis/vim-clevertab', 'ultisnips-expand-or-jump-setting'
 
+" TypeScript
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'clausreinke/typescript-tools.vim'
+
 call neobundle#end()
 
 " Enable Indent in plugins
