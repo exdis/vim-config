@@ -257,6 +257,9 @@ nmap <silent> } :lnext<cr>
 " first syntastic error
 nmap <silent> <leader>{ :lfirst<cr>
 
+" Do not compile typescript files
+let g:syntastic_typescript_tsc_fname = ''
+
 "-------------------------
 " Fugitive
 
