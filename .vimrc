@@ -777,3 +777,9 @@ let g:ackhighlight=1
 if executable('ag')
     let g:ackprg = 'ag -S --nogroup --nocolor --ignore vendors --ignore www --ignore tests'
 endif
+
+" Tern
+nmap td :TernDef<CR>
+nmap tr :TernRename<CR>
+nmap tt :TernType<CR>
+nmap tf :TernRefs<CR>
