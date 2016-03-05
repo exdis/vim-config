@@ -205,6 +205,9 @@ NeoBundle 'exdis/vim-clevertab', 'ultisnips-expand-or-jump-setting'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'clausreinke/typescript-tools.vim'
 
+" Rust
+NeoBundle 'rust-lang/rust.vim'
+
 call neobundle#end()
 
 " Enable Indent in plugins
@@ -783,3 +786,6 @@ nmap td :TernDef<CR>
 nmap tr :TernRename<CR>
 nmap tt :TernType<CR>
 nmap tf :TernRefs<CR>
+
+" Rust
+let g:rustfmt_autosave=1
