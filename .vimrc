@@ -786,6 +786,3 @@ nmap td :TernDef<CR>
 nmap tr :TernRename<CR>
 nmap tt :TernType<CR>
 nmap tf :TernRefs<CR>
-
-" Rust
-let g:rustfmt_autosave=1
