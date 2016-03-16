@@ -786,3 +786,5 @@ nmap td :TernDef<CR>
 nmap tr :TernRename<CR>
 nmap tt :TernType<CR>
 nmap tf :TernRefs<CR>
+
+inoremap <silent> <leader>; <C-o>A;
