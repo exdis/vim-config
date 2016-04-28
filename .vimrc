@@ -208,6 +208,9 @@ NeoBundle 'clausreinke/typescript-tools.vim'
 " Rust
 NeoBundle 'rust-lang/rust.vim'
 
+" Go
+NeoBundle 'fatih/vim-go'
+
 call neobundle#end()
 
 " Enable Indent in plugins
@@ -786,5 +789,12 @@ nmap td :TernDef<CR>
 nmap tr :TernRename<CR>
 nmap tt :TernType<CR>
 nmap tf :TernRefs<CR>
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 inoremap <silent> <leader>; <C-o>A;
