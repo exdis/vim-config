@@ -161,6 +161,9 @@ NeoBundle 'jszakmeister/vim-togglecursor'
 " Nice statusline/ruler for vim
 NeoBundle 'bling/vim-airline'
 
+" Airline themes
+NeoBundle 'vim-airline/vim-airline-themes'
+
 " Improve javascritp syntax higlighting, needed for good folding,
 " and good-looking javascritp code
 NeoBundle 'jelera/vim-javascript-syntax'
@@ -322,12 +325,6 @@ let g:solarized_termcolors=256
 
 " Colorscheme for airline
 let g:airline_theme='understated'
-
-" Set custom left separator
-let g:airline_left_sep = '▶'
-
-" Set custom right separator
-let g:airline_right_sep = '◀'
 
 " Enable airline for tab-bar
 let g:airline#extensions#tabline#enabled = 1
@@ -798,3 +795,17 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 inoremap <silent> <leader>; <C-o>A;
+
+" Airline powerline symbols
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
