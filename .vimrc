@@ -458,7 +458,7 @@ set shortmess=atI
 set list
 
 " Setting up how to display whitespace characters
-set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
+set listchars=tab:→\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
 
 " Wrap line only on characters in breakat list like ^I!@*-+;:,./?
 " Useless with nowrap
@@ -809,3 +809,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+" NerdTree arrows
+let g:NERDTreeDirArrowExpandable = '➜'
+let g:NERDTreeDirArrowCollapsible = '⬆'
