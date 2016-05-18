@@ -34,6 +34,24 @@ snippet afn "Arrow function" w
 }
 endsnippet
 
+snippet fun "Function" w
+function ($1) {
+	$0
+}
+endsnippet
+
 snippet sta "Static property" b
 static $1 = $0;
+endsnippet
+
+snippet des "Mocha describe" b
+describe('$1', function () {
+	$0
+});
+endsnippet
+
+snippet it "Mocha it" b
+it('$1', function ($2) {
+	$0
+});
 endsnippet

@@ -214,6 +214,9 @@ NeoBundle 'rust-lang/rust.vim'
 " Go
 NeoBundle 'fatih/vim-go'
 
+" Vim argwrap
+NeoBundle 'FooSoft/vim-argwrap'
+
 call neobundle#end()
 
 " Enable Indent in plugins
@@ -813,3 +816,7 @@ let g:airline_symbols.linenr = ''
 " NerdTree arrows
 let g:NERDTreeDirArrowExpandable = '➜'
 let g:NERDTreeDirArrowCollapsible = '⬆'
+
+" Vim-argwrap
+nnoremap <silent> <leader>a :ArgWrap<CR>
+autocmd FileType go let g:argwrap_tail_comma = 1
