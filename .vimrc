@@ -819,4 +819,4 @@ let g:NERDTreeDirArrowCollapsible = '⬆'
 
 " Vim-argwrap
 nnoremap <silent> <leader>a :ArgWrap<CR>
-autocmd FileType go let g:argwrap_tail_comma = 1
+au BufRead,BufNewFile *.go let b:argwrap_tail_comma = 1
