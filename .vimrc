@@ -217,6 +217,27 @@ NeoBundle 'fatih/vim-go'
 " Vim argwrap
 NeoBundle 'FooSoft/vim-argwrap'
 
+" Yate
+NeoBundle 'maksimr/vim-yate'
+
+" Gist
+NeoBundle 'mattn/gist-vim'
+
+" Webapi
+NeoBundle 'mattn/webapi-vim'
+
+" RipGrep
+NeoBundle 'jremmen/vim-ripgrep'
+
+" Vue
+NeoBundle 'posva/vim-vue'
+
+" Codi
+NeoBundle 'metakirby5/codi.vim'
+
+" Elixir
+NeoBundle 'elixir-lang/vim-elixir'
+
 call neobundle#end()
 
 " Enable Indent in plugins
@@ -820,3 +841,21 @@ let g:NERDTreeDirArrowCollapsible = '⬆'
 " Vim-argwrap
 nnoremap <silent> <leader>a :ArgWrap<CR>
 au BufRead,BufNewFile *.go let b:argwrap_tail_comma = 1
+
+autocmd FileType qf nnoremap <buffer> t <C-W><Enter><C-W>T
+autocmd FileType qf nnoremap <buffer> s <C-W><Enter><C-W>L
+
+let g:rg_highlight=1
+
+let $SHELL='/bin/sh'
+
+let g:codi#interpreters = {
+    \ 'javascript': {
+        \ 'bin': 'node',
+        \ 'rightalign': 0,
+        \ },
+    \ }
+
+let g:codi#log='/home/dev/codilog'
+
+nnoremap <leader>c :Codi!! javascript<CR>

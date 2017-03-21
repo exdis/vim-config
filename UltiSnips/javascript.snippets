@@ -1,3 +1,111 @@
+snippet '':f "object method string"
+'${1:${2:#thing}:${3:click}}': function (element) {
+	${VISUAL}$0
+}${10:,}
+endsnippet
+
+snippet :f "Object Method"
+${1:method_name}: function (${3:attribute}) {
+	${VISUAL}$0
+}${10:,}
+endsnippet
+
+snippet :, "Object Value JS"
+${1:value_name}: ${0:value},
+endsnippet
+
+snippet : "Object key key: 'value'"
+${1:key}: ${2:"${3:value}"}${4:, }
+endsnippet
+
+snippet proto "Prototype (proto)"
+${1:class_name}.prototype.${2:method_name} = function (${3:first_argument}) {
+	${VISUAL}$0
+};
+
+endsnippet
+
+snippet fun "function (fun)" w
+function ${1:function_name} (${2:argument}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet vf "Function assigned to var"
+${1:var }${2:function_name} = function $2 ($3) {
+	${VISUAL}$0
+};
+endsnippet
+
+snippet af "Anonymous Function" i
+function ($1) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet iife "Immediately-Invoked Function Expression (iife)"
+(function (${1:window}) {
+	${VISUAL}$0
+}(${2:$1}));
+endsnippet
+
+snippet ;fe "Minify safe iife"
+;(function (${1}) {
+	${VISUAL}$0
+}(${2}))
+endsnippet
+
+snippet timeout "setTimeout function"
+setTimeout(function () {
+	${VISUAL}$0
+}${2:.bind(${3:this})}, ${1:10});
+endsnippet
+
+snippet if "if (condition) { ... }"
+if (${1:true}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet ife "if (condition) { ... } else { ... }"
+if (${1:true}) {
+	${VISUAL}$0
+} else {
+	${2}
+}
+endsnippet
+
+snippet switch
+switch (${VISUAL}${1:expression}) {
+	case '${VISUAL}${3:case}':
+		${4}
+		break;
+	${0}
+	default:
+		${2}
+}
+endsnippet
+
+snippet case "case 'xyz': ... break"
+case '${VISUAL}${1:case}':
+	${VISUAL}$0
+	break;
+endsnippet
+
+snippet do "do { ... } while (condition)"
+do {
+	${VISUAL}$0
+} while (${1:/* condition */});
+endsnippet
+
+snippet ret "Return statement"
+return ${VISUAL}$0;
+endsnippet
+
+snippet us
+'use strict';
+endsnippet
+
 snippet cl "console.log" b
 console.log($0);
 endsnippet
@@ -6,42 +114,10 @@ snippet db "debugger" b
 debugger;
 endsnippet
 
-snippet if "simple if" b
-if (${1:true}) {
-	$0
-}
-endsnippet
-
-snippet comp "Vue Component" b
-import {ComponentVue, asset} from 'Component/Vue';
-
-@ComponentVue
-class $1 {
-
-	static template = require(asset('./templates/${1/./\l$0/}.jade'));
-
-	static styles = require(asset('./styles/${1/./\l$0/}.scss'));
-
-	$0
-}
-
-export default $1;
-endsnippet
-
 snippet afn "Arrow function" w
-($1) => {
-	$2
+(${1:argument}) => {
+	${VISUAL}${0}
 }
-endsnippet
-
-snippet fun "Function" w
-function ($1) {
-	$0
-}
-endsnippet
-
-snippet sta "Static property" b
-static $1 = $0;
 endsnippet
 
 snippet des "Mocha describe" b
@@ -54,4 +130,16 @@ snippet it "Mocha it" b
 it('$1', function ($2) {
 	$0
 });
+endsnippet
+
+snippet vreq "assign a CommonJS-style module to a var"
+var ${0:${1/(.+\/)*(\w+)(-|\b|$)(\..+$)?/\u$2/g}} = require('$1');
+endsnippet
+
+snippet req "Common.js require" b
+var $1 = require('$0');
+endsnippet
+
+snippet ex "module.exports"
+module.exports = $1;
 endsnippet
