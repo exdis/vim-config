@@ -238,6 +238,19 @@ NeoBundle 'metakirby5/codi.vim'
 " Elixir
 NeoBundle 'elixir-lang/vim-elixir'
 
+" Elm
+NeoBundle 'elmcast/elm-vim'
+
+" Flow
+NeoBundleLazy 'flowtype/vim-flow', {
+    \ 'autoload': {
+    \     'filetypes': 'javascript'
+    \ },
+    \ 'build': {
+    \     'mac': 'npm install -g flow-bin',
+    \     'unix': 'npm install -g flow-bin'
+    \ }}
+
 call neobundle#end()
 
 " Enable Indent in plugins
@@ -348,7 +361,8 @@ let g:solarized_termcolors=256
 " vim-airline
 
 " Colorscheme for airline
-let g:airline_theme='understated'
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='light'
 
 " Enable airline for tab-bar
 let g:airline#extensions#tabline#enabled = 1
@@ -412,10 +426,10 @@ call arpeggio#map('i', '', 0, 'jk', '<ESC>')
 "--------------------------------------------------
 " Colorscheme
 
-set background=dark
+set background=light
 
 " Use wells-colors colorscheme
-colorscheme gruvbox
+colorscheme solarized
 let g:gruvbox_contrast_dark="soft"
 let g:gruvbox_termcolors=256
 
@@ -540,6 +554,7 @@ set cursorline
 
 " higlight column right after max textwidth
 set colorcolumn=80,120
+highlight ColorColumn ctermbg=7
 
 
 "--------------------------------------------------
@@ -769,8 +784,6 @@ set splitright
 
 cnoreabbrev qq tabclose
 
-set clipboard=unnamedplus
-
 " JSDoc settings
 let g:jsdoc_enable_es6=1
 let g:jsdoc_allow_input_prompt=1
@@ -859,3 +872,13 @@ let g:codi#interpreters = {
 let g:codi#log='/home/dev/codilog'
 
 nnoremap <leader>c :Codi!! javascript<CR>
+
+" Elm
+let g:elm_format_autosave = 1
+let g:elm_setup_keybindings = 0
+
+au VimLeave * :!clear && clear
+
+set clipboard=unnamed
+
+let g:flow#autoclose = 1
