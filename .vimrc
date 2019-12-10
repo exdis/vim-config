@@ -242,14 +242,14 @@ NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'elmcast/elm-vim'
 
 " Flow
-NeoBundleLazy 'flowtype/vim-flow', {
-    \ 'autoload': {
-    \     'filetypes': 'javascript'
-    \ },
-    \ 'build': {
-    \     'mac': 'npm install -g flow-bin',
-    \     'unix': 'npm install -g flow-bin'
-    \ }}
+" NeoBundleLazy 'flowtype/vim-flow', {
+"     \ 'autoload': {
+"     \     'filetypes': 'javascript'
+"     \ },
+"     \ 'build': {
+"     \     'mac': 'npm install -g flow-bin',
+"     \     'unix': 'npm install -g flow-bin'
+"     \ }}
 
 call neobundle#end()
 
@@ -882,3 +882,4 @@ au VimLeave * :!clear && clear
 set clipboard=unnamed
 
 let g:flow#autoclose = 1
+let g:go_version_warning = 0
