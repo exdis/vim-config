@@ -61,7 +61,7 @@ NeoBundle 'vim-scripts/tlib'
 " NeoBundle 'AndrewRadev/simple_bookmarks.vim'
 
 " Snippets engine with good integration with neocomplcache
-NeoBundle 'SirVer/ultisnips'
+" NeoBundle 'SirVer/ultisnips'
 
 " Dirr diff
 NeoBundle 'vim-scripts/DirDiff.vim'
@@ -793,15 +793,14 @@ let g:jsdoc_underscore_private=1
 nmap <silent> <leader>j <Plug>(jsdoc)
 
 " Snippets
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsExpandTrigger="<nop>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+" let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsExpandTrigger="<nop>"
+" let g:UltiSnipsJumpForwardTrigger="<c-n>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " CleverTab
 inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
                       \<c-r>=CleverTab#Complete('tab')<cr>
-                      \<c-r>=CleverTab#Complete('ultisnips')<cr>
                       \<c-r>=CleverTab#Complete('keyword')<cr>
                       \<c-r>=CleverTab#Complete('omni')<cr>
                       \<c-r>=CleverTab#Complete('stop')<cr>
